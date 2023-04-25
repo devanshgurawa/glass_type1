@@ -86,7 +86,7 @@ hist_features = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', 
 for feature in hist_features:
     st.subheader(f'Histogram Between {feature} and Glass Type')
     plt.figure(figsize=(16,7))
-    plt.hist(glass_df[feature], edgecolor='black')
+    plt.hist(glass_df[feature], edgecolor='black', bins='sturges')
     st.pyplot()
 
 st.sidebar.subheader('Box Plot')
