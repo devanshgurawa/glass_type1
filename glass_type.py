@@ -70,7 +70,15 @@ if st.sidebar.checkbox('Show Raw Data'):
     st.subheader('Full Dataset')
     st.dataframe(glass_df)
 
+st.sidebar.subheader('Scatter Plot')
+features_list = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
+for feature in features_list:
+    st.subheader(f'Scatter Plot Between {feature} and Glass Type')
+    plt.figure(figsize=(16,7))
+    sns.scatterplot(x=feature, y='GlassType', data=glass_df)
+    st.pyplot()
 
 
 
