@@ -95,7 +95,7 @@ box_features = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', '
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 for feature in box_features:
-    st.subheader(f'Box Plot for {feature}')
+    st.subheader(f"Box Plot for {feature}")
     plt.figure(figsize=(12,2))
     sns.boxplot(glass_df[feature])
     st.pyplot()
