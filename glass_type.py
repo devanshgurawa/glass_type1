@@ -115,6 +115,15 @@ if 'count plot' in plot_types:
     plt.title(f"Countplot for {columns}")
     sns.countplot(x='GlassType', data=glass_df)
     st.pyplot()
+    
+if 'Pie chart' in plot_types:
+    st.subheader('Pie Chart')
+    columns = st.sidebar.selectbox('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+    plt.figure(figsize=(12,6))
+    plt.title(f"pie chart for {columns}")
+    pie_data = glass_df['GlassType'].value_counts()
+    plt.pie(pie_data, labels=pie_data.index, autopct = '%1.2f%%', startangle=30, explode=np.linspace(0.06, 0.16, 6))
+    st.pyplot()
 
 
 
