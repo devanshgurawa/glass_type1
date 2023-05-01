@@ -99,6 +99,14 @@ if 'Histogram' in plot_types:
     plt.title(f"histogram for {columns}")
     plt.hist(glass_df[columns],bins='sturges', edgecolor='black')
     st.pyplot()
+    
+if 'Boxplot' in plot_types:
+    st.subheader('Boxplot')
+    columns = st.sidebar.selectbox('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+    plt.figure(figsize=(12,6))
+    plt.title(f"boxplot for {columns}")
+    sns.boxplot(glass_df[columns])
+    st.pyplot()
 
 
 
