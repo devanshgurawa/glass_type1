@@ -90,15 +90,7 @@ for feature in features_list:
     #plt.hist(glass_df[feature],bins='sturges', edgecolor='black')
     #st.pyplot()
 
-st.sidebar.subheader('Box Plot')
-box_features = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
-st.set_option('deprecation.showPyplotGlobalUse', False)
 
-for feature in box_features:
-    st.subheader(f"Box Plot for {feature}")
-    plt.figure(figsize=(12,2))
-    sns.boxplot(glass_df[feature])
-    st.pyplot()
 
 
   
