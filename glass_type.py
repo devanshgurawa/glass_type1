@@ -89,7 +89,16 @@ for feature in features_list:
     #plt.figure(figsize=(16,7))
     #plt.hist(glass_df[feature],bins='sturges', edgecolor='black')
     #st.pyplot()
+st.sidebar.subheader('visualisation selector')
+plot_types = st.sidebar.multiselect('Select the charts or plots', ('Histogram', 'Boxplot', 'count plot', 'Pie chart', 'correlation heat map', 'pair plot'))
 
+if 'Histogram' in plot_types:
+    st.subheader('Histogram')
+    columns = st.sidebar.selectbox('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+    plt.figure(figsize=(12,6))
+    plt.title(f"histogram for {columns}")
+    plt.hist(glass_df[columns],bins='sturges', edgecolor='black')
+    st.pyplot()
 
 
 
