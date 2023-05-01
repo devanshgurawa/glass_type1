@@ -80,15 +80,15 @@ for feature in features_list:
     sns.scatterplot(x=feature, y='GlassType', data=glass_df)
     st.pyplot()
 
-st.sidebar.subheader('Histogram')
-hist_features = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.sidebar.subheader('Histogram')
+#hist_features = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
-for feature in hist_features:
-    st.subheader(f'Histogram Between {feature} and Glass Type')
-    plt.figure(figsize=(16,7))
-    plt.hist(glass_df[feature],bins='sturges', edgecolor='black')
-    st.pyplot()
+#for feature in hist_features:
+    #st.subheader(f'Histogram Between {feature} and Glass Type')
+    #plt.figure(figsize=(16,7))
+    #plt.hist(glass_df[feature],bins='sturges', edgecolor='black')
+    #st.pyplot()
 
 st.sidebar.subheader('Box Plot')
 box_features = st.sidebar.multiselect('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
