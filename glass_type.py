@@ -134,7 +134,7 @@ if 'correlation heat map' in plot_types:
     st.pyplot()
 
 if 'pair plot' in plot_types:
-    st.subheader('Pair Plot)
+    st.subheader('Pair Plot')
     columns = st.sidebar.selectbox('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
     plt.figure(figsize=(12,6))
     plt.title(f"Pair Plot for {columns}")
