@@ -124,6 +124,14 @@ if 'Pie chart' in plot_types:
     pie_data = glass_df['GlassType'].value_counts()
     plt.pie(pie_data, labels=pie_data.index, autopct = '%1.2f%%', startangle=30, explode=np.linspace(0.06, 0.16, 6))
     st.pyplot()
+    
+if 'correlation heat map' in plot_types:
+    st.subheader('Correlation Heat Map')
+    columns = st.sidebar.selectbox('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+    plt.figure(figsize=(12,6))
+    plt.title(f"Correlation Heat Map for {columns}")
+    sns.heatmap(glass_df.corr(), annot=True)
+    st.pyplot()
 
 
 
