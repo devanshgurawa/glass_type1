@@ -107,6 +107,14 @@ if 'Boxplot' in plot_types:
     plt.title(f"boxplot for {columns}")
     sns.boxplot(glass_df[columns])
     st.pyplot()
+    
+if 'count plot' in plot_types:
+    st.subheader('Count Plot')
+    columns = st.sidebar.selectbox('Select the x-axis Values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba' , 'Fe'))
+    plt.figure(figsize=(12,6))
+    plt.title(f"Countplot for {columns}")
+    sns.countplot(x='GlassType', data=glass_df)
+    st.pyplot()
 
 
 
